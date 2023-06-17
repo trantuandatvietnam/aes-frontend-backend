@@ -1,0 +1,19 @@
+{
+  "name": "aes-algorithms",
+  "version": "1.0.0",
+  "description": "aes security mechanism encrypts communication between frontend and backend",
+  "main": "encrypt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aes",
+    "springboot",
+    "react"
+  ],
+  "author": "dat.trantuan",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  }
+}
