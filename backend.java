@@ -13,10 +13,13 @@ import java.util.Base64;
 
 public class AESUtils {
     private static final String ALGORITHM = "AES";
-    private static final String KEY = "datsecret3&2*2s!";
+    private static final String KEY = "BuJo|%nEaV>9g\\%63I~_M.tv?Y\"?(tBX";
 
-    public static String decrypt(String encryptedData, String iv) {
+    public static String decrypt(String encryptedPayload) {
         try {
+            String iv = encryptedPayload.substring(0, 32);
+            String encryptedData = encryptedPayload.substring(32);
+
             byte[] keyBytes = KEY.getBytes(StandardCharsets.UTF_8);
             byte[] ciphertextBytes = encryptedData.getBytes();
             byte[] ivBytes = Hex.decode(iv);
