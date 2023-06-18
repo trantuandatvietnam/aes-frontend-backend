@@ -13,7 +13,7 @@ import java.util.Base64;
 
 public class AESUtils {
     private static final String ALGORITHM = "AES";
-    private static final String KEY = "BuJo|%nEaV>9g\\%63I~_M.tv?Y\"?(tBX";
+    private static final String KEY = "YOUR_KEY";
 
     public static String decrypt(String encryptedPayload) {
         try {
@@ -71,5 +71,4 @@ public class AESUtils {
             return null;
         }
     }
-
 }
