@@ -17,12 +17,12 @@ public class AESUtils {
 
     public static String decrypt(String encryptedPayload) {
         try {
-            String iv = encryptedPayload.substring(0, 32);
-            String encryptedData = encryptedPayload.substring(32);
+            String iv = encryptedPayload.substring(0, 24);
+            String encryptedData = encryptedPayload.substring(24);
 
             byte[] keyBytes = KEY.getBytes(StandardCharsets.UTF_8);
             byte[] ciphertextBytes = encryptedData.getBytes();
-            byte[] ivBytes = Hex.decode(iv);
+            byte[] ivBytes = Base64.getDecoder().decode(iv);
 
             Security.addProvider(new BouncyCastleProvider());
 

@@ -11,7 +11,7 @@ function encrypt(plaintext: string) {
     })
 
     const encryptMessage = encrypted.ciphertext.toString(CryptoJS.enc.Base64)
-    return iv.toString(CryptoJS.enc.Hex) + encryptMessage
+    return iv.toString(CryptoJS.enc.Base64) + encryptMessage
   } catch (error) {
     return null
   }
@@ -22,6 +22,7 @@ function decrypt(encryptedData: string) {
     const key = CryptoJS.enc.Utf8.parse(process.env.REACT_APP_SECRET_AES_KEY as string)
     const ivString = encryptedData.substring(0, 24)
     const encryptedString = encryptedData.substring(24)
+    
     const iv = CryptoJS.enc.Base64.parse(ivString)
 
     const decrypted = CryptoJS.AES.decrypt(encryptedString, key, {
